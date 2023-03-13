@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - PORT=80
+      - AM_I_READING_ENV_VARIABLES=YUP
+    command: "echo 'is this going to break the build?' && exit 418"
+
